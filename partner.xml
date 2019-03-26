@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_instructor_form" model="ir.ui.view">
+            <field name="name">res.partner.instructor.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="website" position="after">
+                    <field name="is_instructor"/>
+                </field>
+            </field>
+        </record>
+
+       <record id="view_res_partner_filter2" model="ir.ui.view">
+            <field name="name">res.partner.select2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+	               <filter string="Instructors"
+    	           	 name="instructor" domain="[('is_instructor','=',1)]"
+                           help="Instructor Partners"/>
+				</search>
+			</field>
+		</record>
+
+    </data>
+</openerp>

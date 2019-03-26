@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"course_manager","course_manager","model_academic_course","group_manager",1,1,1,1
+"session_manager","session_manager","model_academic_session","group_manager",1,1,1,1
+"attendee_manage","attendee_manager","model_academic_attendee","group_manager",1,1,1,1
+"course_user","course_user","model_academic_course","group_user",1,1,1,0
+"session_user","session_user","model_academic_session","group_user",1,1,1,0
+"attendee_user","attendee_user","model_academic_attendee","group_user",1,1,1,0
+"course_all","course_all","model_academic_course",,1,0,0,0
+"session_all","session_all","model_academic_session",,1,0,0,0
+"attendee_all","attendee_all","model_academic_attendee",,1,0,0,0

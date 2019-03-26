@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_academic_attendee_tree" model="ir.ui.view">
+            <field name="name">academic.attendee.tree</field>
+            <field name="model">academic.attendee</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Attendee">
+                    <field name="name"/>
+                    <field name="session_id" />
+                    <field name="partner_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- search -->
+		<record id="attendee_search" model="ir.ui.view">
+			<field name="name">attendee_search</field>
+			<field name="model">academic.attendee</field>
+			<field name="arch" type="xml">
+				<search string="Search Attendees">
+	                <field name="session_id"/>
+	                <field name="name"/>
+	                <group expand="1" string="Group By...">
+	                    <filter string="Course"
+	                        icon="terp-personal" domain="[]"
+	                    	 context="{'group_by':'course_id'}"/>
+	                    <filter string="Session" icon="terp-personal"
+	                         domain="[]"
+	                    	 context="{'group_by':'session_id'}"/>
+	                    <filter string="Partner"
+	                        icon="terp-personal" domain="[]"
+	                    	 context="{'group_by':'partner_id'}"/>
+
+	                </group>
+	            </search>
+			</field>
+		</record>
+
+    </data>
+</openerp>

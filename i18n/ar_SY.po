@@ -1,0 +1,463 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* academic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-23 04:55+0000\n"
+"PO-Revision-Date: 2017-02-23 04:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: academic
+#: model:ir.ui.menu,name:academic.academic_0
+#: model:ir.ui.menu,name:academic.academic_1
+msgid "Academic"
+msgstr "Academic"
+
+#. module: academic
+#: model:res.groups,name:academic.group_manager
+msgid "Academic / Manager"
+msgstr "Academic / Manager"
+
+#. module: academic
+#: model:res.groups,name:academic.group_user
+msgid "Academic / User"
+msgstr "Academic / User"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_active
+msgid "Active"
+msgstr "نشط"
+
+#. module: academic
+#: model:ir.ui.menu,name:academic.create_attendee_wizard_menu
+msgid "Add Attendee"
+msgstr "Add Attendee"
+
+#. module: academic
+#: model:ir.actions.act_window,name:academic.session_create_attendee_wizard
+msgid "Add Attendees"
+msgstr "Add Attendees"
+
+#. module: academic
+#: model:ir.actions.act_window,name:academic.create_attendee_wizard_action
+#: model:ir.ui.view,arch_db:academic.create_attendee_form_view
+msgid "Add attendee"
+msgstr "Add attendee"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.create_attendee_form_view
+msgid "Add attendees"
+msgstr "Add attendees"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.create_attendee_form_view
+msgid "Are you sure you want to add those attendees?"
+msgstr "Are you sure you want to add those attendees?"
+
+#. module: academic
+#: model:ir.ui.menu,name:academic.menu_academic_attendee
+#: model:ir.ui.view,arch_db:academic.view_academic_attendee_tree
+msgid "Attendee"
+msgstr "Attendee"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_attendee_ids
+#: model:ir.ui.view,arch_db:academic.create_attendee_form_view
+#: model:ir.ui.view,arch_db:academic.view_academic_session_form
+msgid "Attendees"
+msgstr "Attendees"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_attendee_ids
+msgid "Attendees to Add"
+msgstr "Attendees to Add"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.create_attendee_form_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_attendee_list
+msgid "Click to add a Attendee"
+msgstr "Click to add a Attendee"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_course_list
+msgid "Click to add a Course"
+msgstr "Click to add a Course"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_session_list
+msgid "Click to add a Session"
+msgstr "Click to add a Session"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_instructor_list
+msgid "Click to add an Instructor"
+msgstr "Click to add an Instructor"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_academic_session_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: academic
+#: selection:academic.session,state:0
+msgid "Confirmed"
+msgstr "Confirmed"
+
+#. module: academic
+#: code:addons/academic/session.py:81
+#, python-format
+msgid "Copy of %s"
+msgstr "Copy of %s"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_course_id
+#: model:ir.model.fields,field_description:academic.field_academic_session_course_id
+#: model:ir.ui.menu,name:academic.menu_academic_course
+#: model:ir.ui.view,arch_db:academic.attendee_search
+#: model:ir.ui.view,arch_db:academic.session_search
+msgid "Course"
+msgstr "Course"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_academic_course_form
+msgid "Course Form"
+msgstr "Course Form"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_academic_course_form
+msgid "Course Name"
+msgstr "Course Name"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_create_uid
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_create_uid
+#: model:ir.model.fields,field_description:academic.field_academic_course_create_uid
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_create_uid
+#: model:ir.model.fields,field_description:academic.field_academic_session_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_create_date
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_create_date
+#: model:ir.model.fields,field_description:academic.field_academic_course_create_date
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_create_date
+#: model:ir.model.fields,field_description:academic.field_academic_session_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: academic
+#: model:ir.actions.act_window,name:academic.action_attendee_list
+msgid "Daftar Attendee"
+msgstr "Daftar Attendee"
+
+#. module: academic
+#: model:ir.actions.act_window,name:academic.action_course_list
+msgid "Daftar Course"
+msgstr "Daftar Course"
+
+#. module: academic
+#: model:ir.actions.act_window,name:academic.action_session_list
+msgid "Daftar Session"
+msgstr "Daftar Session"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.session_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_course_description
+#: model:ir.ui.view,arch_db:academic.view_academic_course_form
+msgid "Description"
+msgstr "الوصف"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_display_name
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_display_name
+#: model:ir.model.fields,field_description:academic.field_academic_course_display_name
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_display_name
+#: model:ir.model.fields,field_description:academic.field_academic_session_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: academic
+#: selection:academic.session,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: academic
+#: selection:academic.session,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_duration
+msgid "Duration"
+msgstr "Duration"
+
+#. module: academic
+#: sql_constraint:academic.course:0
+msgid "Field name dan description tidak boleh sama"
+msgstr "Field name dan description tidak boleh sama"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.session_search
+msgid "Group By.."
+msgstr "Group By.."
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.attendee_search
+msgid "Group By..."
+msgstr "تجميع حسب ..."
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_id
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_id
+#: model:ir.model.fields,field_description:academic.field_academic_course_id
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_id
+#: model:ir.model.fields,field_description:academic.field_academic_session_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_image_small
+msgid "Image Small"
+msgstr "Image Small"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_instructor_id
+#: model:ir.ui.menu,name:academic.menu_academic_instructor
+#: model:ir.ui.view,arch_db:academic.session_search
+msgid "Instructor"
+msgstr "Instructor"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_res_partner_filter2
+msgid "Instructor Partners"
+msgstr "Instructor Partners"
+
+#. module: academic
+#: constraint:academic.session:0
+msgid "Instructor cannot be Attendee"
+msgstr "Instructor cannot be Attendee"
+
+#. module: academic
+#: model:ir.actions.act_window,name:academic.action_instructor_list
+#: model:ir.ui.view,arch_db:academic.view_res_partner_filter2
+msgid "Instructors"
+msgstr "Instructors"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_res_partner_is_instructor
+msgid "Is Instructor"
+msgstr "Is Instructor"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee___last_update
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard___last_update
+#: model:ir.model.fields,field_description:academic.field_academic_course___last_update
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard___last_update
+#: model:ir.model.fields,field_description:academic.field_academic_session___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_write_uid
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_write_uid
+#: model:ir.model.fields,field_description:academic.field_academic_course_write_uid
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_write_uid
+#: model:ir.model.fields,field_description:academic.field_academic_session_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_write_date
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_write_date
+#: model:ir.model.fields,field_description:academic.field_academic_course_write_date
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_write_date
+#: model:ir.model.fields,field_description:academic.field_academic_session_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_academic_session_form
+msgid "Mark as Done"
+msgstr "Mark as Done"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_name
+#: model:ir.model.fields,field_description:academic.field_academic_course_name
+#: model:ir.model.fields,field_description:academic.field_academic_session_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: academic
+#: sql_constraint:academic.course:0
+msgid "Name harus unik"
+msgstr "Name harus unik"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.session_search
+msgid "Non Zero Duration"
+msgstr "Non Zero Duration"
+
+#. module: academic
+#: model:ir.model,name:academic.model_res_partner
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_partner_id
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_partner_id
+#: model:ir.ui.view,arch_db:academic.attendee_search
+msgid "Partner"
+msgstr "شريك"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_academic_session_form
+msgid "Reset to draft"
+msgstr "Reset to draft"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_course_responsible_id
+msgid "Responsible"
+msgstr "المسئول"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.attendee_search
+msgid "Search Attendees"
+msgstr "Search Attendees"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_res_partner_filter2
+msgid "Search Partner"
+msgstr "بحث الشركاء"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.session_search
+msgid "Search Session"
+msgstr "Search Session"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_seats
+msgid "Seats"
+msgstr "Seats"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.session_kanban
+msgid "Seats:"
+msgstr "Seats:"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_session_id
+#: model:ir.model.fields,field_description:academic.field_academic_create_attendee_wizard_session_ids
+#: model:ir.ui.menu,name:academic.menu_academic_session
+#: model:ir.ui.view,arch_db:academic.attendee_search
+#: model:ir.ui.view,arch_db:academic.session_cal
+#: model:ir.ui.view,arch_db:academic.session_gantt
+#: model:ir.ui.view,arch_db:academic.session_graph
+#: model:ir.ui.view,arch_db:academic.view_academic_session_form
+#: model:ir.ui.view,arch_db:academic.view_academic_session_tree
+msgid "Session"
+msgstr "Session"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_academic_session_form
+msgid "Session Name"
+msgstr "Session Name"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_course_session_ids
+#: model:ir.ui.view,arch_db:academic.view_academic_course_form
+msgid "Sessions"
+msgstr "Sessions"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_state
+msgid "State"
+msgstr "المحافظة"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_session_taken_seats
+msgid "Taken Seat"
+msgstr "Taken Seat"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.session_kanban
+msgid "Taken Seats:"
+msgstr "Taken Seats:"
+
+#. module: academic
+#: model:ir.model.fields,field_description:academic.field_academic_attendee_wizard_wizard_id
+msgid "Wizard"
+msgstr "المعالج"
+
+#. module: academic
+#: sql_constraint:academic.attendee:0
+msgid "You cannot insert the same attendee multiple times!"
+msgstr "You cannot insert the same attendee multiple times!"
+
+#. module: academic
+#: model:ir.model,name:academic.model_academic_attendee
+msgid "academic.attendee"
+msgstr "academic.attendee"
+
+#. module: academic
+#: model:ir.model,name:academic.model_academic_attendee_wizard
+msgid "academic.attendee.wizard"
+msgstr "academic.attendee.wizard"
+
+#. module: academic
+#: model:ir.model,name:academic.model_academic_course
+msgid "academic.course"
+msgstr "academic.course"
+
+#. module: academic
+#: model:ir.model,name:academic.model_academic_create_attendee_wizard
+msgid "academic.create.attendee.wizard"
+msgstr "academic.create.attendee.wizard"
+
+#. module: academic
+#: model:ir.model,name:academic.model_academic_session
+msgid "academic.session"
+msgstr "academic.session"
+
+#. module: academic
+#: model:ir.ui.view,arch_db:academic.view_academic_course_tree
+msgid "course"
+msgstr "course"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_attendee_list
+msgid "klik tombol create untuk bikin Attendee baru"
+msgstr "klik tombol create untuk bikin Attendee baru"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_course_list
+msgid "klik tombol create untuk bikin Course baru"
+msgstr "klik tombol create untuk bikin Course baru"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_session_list
+msgid "klik tombol create untuk bikin Session baru"
+msgstr "klik tombol create untuk bikin Session baru"
+
+#. module: academic
+#: model:ir.actions.act_window,help:academic.action_instructor_list
+msgid "nambah instructor"
+msgstr "nambah instructor"
+

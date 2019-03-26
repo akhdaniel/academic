@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+		<record id="workflow_session0" model="workflow">
+			<field eval="1" name="on_create"/>
+			<field name="name">Session</field>
+			<field name="osv">academic.session</field>
+		</record>
+
+		<record id="workflow_activity_draft0" model="workflow.activity">
+			<field name="kind">function</field>
+			<field name="name">Draft</field>
+			<field name="join_mode">XOR</field>
+			<field model="workflow" name="wkf_id" search="[('name', '=', u'Session')]"/>
+			<field eval="0" name="flow_stop"/>
+			<field name="split_mode">XOR</field>
+			<field name="action">action_draft()</field>
+			<field eval="1" name="flow_start"/>
+		</record>
+
+		<record id="workflow_activity_confirmed0" model="workflow.activity">
+			<field name="kind">function</field>
+			<field name="name">Confirmed</field>
+			<field name="join_mode">XOR</field>
+			<field model="workflow" name="wkf_id" search="[('name', '=', u'Session')]"/>
+			<field eval="0" name="flow_stop"/>
+			<field name="split_mode">XOR</field>
+			<field name="action">action_confirm()</field>
+			<field eval="0" name="flow_start"/>
+		</record>
+
+		<record id="workflow_activity_done0" model="workflow.activity">
+			<field name="kind">function</field>
+			<field name="name">Done</field>
+			<field name="join_mode">XOR</field>
+			<field model="workflow" name="wkf_id" search="[('name', '=', u'Session')]"/>
+			<field eval="0" name="flow_stop"/>
+			<field name="split_mode">XOR</field>
+			<field name="action">action_done()</field>
+			<field eval="0" name="flow_start"/>
+		</record>
+
+		<record id="workflow_transition_0" model="workflow.transition">
+			<field name="signal">signal_done</field>
+			<field model="workflow.activity" name="act_from" search="[('name', '=', u'Confirmed')]"/>
+			<field model="workflow.activity" name="act_to" search="[('name', '=', u'Done')]"/>
+			<field name="condition">True</field>
+		</record>
+
+		<record id="workflow_transition_1" model="workflow.transition">
+			<field name="signal">signal_confirm</field>
+			<field model="workflow.activity" name="act_from" search="[('name', '=', u'Draft')]"/>
+			<field model="workflow.activity" name="act_to" search="[('name', '=', u'Confirmed')]"/>
+			<field name="condition">True</field>
+		</record>
+
+		<record id="workflow_transition_2" model="workflow.transition">
+			<field name="signal">signal_draft</field>
+			<field model="workflow.activity" name="act_from" search="[('name', '=', u'Done')]"/>
+			<field model="workflow.activity" name="act_to" search="[('name', '=', u'Draft')]"/>
+			<field name="condition">True</field>
+		</record>
+
+	</data>
+</openerp>

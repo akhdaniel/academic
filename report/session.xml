@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    	<!-- menu report -->
+        <report 
+            id="report_session_menu"
+            string="Session"
+            model="academic.session" 
+            report_type="qweb-pdf"
+            file="academic.session" 
+            name="academic.session_report"
+        />
+
+        <!-- template utk semua yg diprint -->
+        <template id="session_report">
+		    <t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="doc">
+		            <t t-call="academic.session_report_document"/>
+		        </t>
+		    </t>
+		</template>
+
+		<!-- template 1 halaman -->
+		<template id="session_report_document">
+		    <t t-call="report.external_layout">
+		        <t t-set="doc" t-value="doc.with_context({'lang':doc.instructor_id.lang})" />
+		        <div class="page">
+
+		            <div class="oe_structure"/>
+		            
+		            <h2>
+		                SESSION: <span t-field="doc.name"/>
+		            </h2>
+
+		            <table class="table table-condensed">
+		                <tr>
+		                    <td>Course</td>
+		                    <td><span t-field="doc.course_id"/></td>
+		                    <td>Instructor</td>
+		                    <td><span t-field="doc.instructor_id"/></td>
+		                </tr>
+		                <tr>
+		                    <td>Start Date</td>
+		                    <td><span t-field="doc.start_date"/></td>
+		                    <td>Duration</td>
+		                    <td><span t-field="doc.duration"/></td>
+		                </tr>
+		                <tr>
+		                    <td>Taken Seats</td>
+		                    <td><span t-field="doc.taken_seats"/></td>
+		                    <td>Active</td>
+		                    <td><span t-field="doc.active"/></td>
+		                </tr>
+		            </table>
+
+					<t t-set="i" t-value="1"/>
+
+		            <table class="table table-condensed">
+		                <thead>
+		                    <tr>
+		                        <th>No</th>
+		                        <th>Partner</th>
+		                        <th>Signed</th>
+		                    </tr>
+		               </thead>
+
+		               <tbody>
+		                    <tr t-foreach="doc.attendee_ids" t-as="att">
+		                        <td>
+		                           	<t t-raw="i"/>
+									<t t-set="i" t-value="i+1"/>
+		                        </td>
+		 
+		                        <td>
+		                            <span t-field="att.partner_id" />
+		                        </td>
+		                        <td>
+									.........
+		                        </td>
+		                    </tr>
+		                </tbody>
+		            </table>
+
+
+		            <table class="table">
+		            	<tr>
+		            		<td style="text-align:right">
+		            			<p style="height:2cm">Instruktur</p>
+
+		            			<p>(.....................)</p>
+		            			<p><span t-field="doc.instructor_id"/></p>
+		            		</td>
+		            	</tr>
+		            </table>
+
+		            <div class="oe_structure"/>
+		        </div>
+		    </t>
+		</template>
+
+
+	</data>
+</openerp>

@@ -1,0 +1,67 @@
+<openerp>
+    <data>
+
+
+
+      <record model="ir.ui.view" id="create_attendee_form_view">
+       <field name="name">academic.create.attendee.wizard.form</field>
+       <field name="model">academic.create.attendee.wizard</field>
+       <field name="type">form</field>
+       <field name="arch" type="xml">
+          <form string="Add attendee" version="7.0">
+
+             <group>
+                <field name="session_ids"/>
+                <field name="attendee_ids" mode="tree">
+                   <tree string="Attendees" editable="bottom">
+                      <field name="partner_id"/>
+                   </tree>
+                </field>
+             </group>
+
+
+             <footer>
+                <button type="special"
+                    special="cancel"
+                    string="Cancel"
+                    icon="fa-times"/>
+
+                <button type="object"
+                    name="action_add_attendee"
+                    string="Add attendees"
+                    icon="fa-check-circle"
+                    confirm="Are you sure you want to add those attendees?"
+                    />
+             </footer>
+          </form>
+       </field>
+      </record>
+
+
+
+
+
+      <record model="ir.actions.act_window" id="create_attendee_wizard_action">
+         <field name="name">Add attendee</field>
+         <field name="res_model">academic.create.attendee.wizard</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">form</field>
+         <field name="target">new</field>
+      </record>
+
+      <menuitem name="Add Attendee" parent="academic_1"
+          id="create_attendee_wizard_menu"
+          sequence="40"
+          action="create_attendee_wizard_action"/>
+
+
+    <act_window id="session_create_attendee_wizard"
+          name="Add Attendees"
+          src_model="academic.session"
+          res_model="academic.create.attendee.wizard"
+          view_mode="form"
+          target="new"
+          key2="client_action_multi"/>
+
+    </data>
+</openerp>

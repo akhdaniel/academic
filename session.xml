@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_academic_session_tree" model="ir.ui.view">
+            <field name="name">academic.session.tree</field>
+            <field name="model">academic.session</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Session" colors="red: taken_seats &gt; 50; green: taken_seats &lt; 20">
+                    <field name="course_id" />
+                    <field name="name"/>
+                    <field name="instructor_id" />
+                    <field name="start_date" />
+                    <field name="duration" />
+                    <field name="seats" />
+                    <field name="active" />
+                    <field name="taken_seats" widget="progressbar"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_academic_session_form" model="ir.ui.view">
+            <field name="name">academic.session.form</field>
+            <field name="model">academic.session</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Session">
+					<header>
+						<button string="Confirm" type="object" name="action_confirm"
+						 	 states="draft" />
+						<button string="Mark as Done" type="object" name="action_done"
+						 	 states="confirmed" />
+						<button string="Reset to Draft" type="object" name="action_draft"
+						 	 states="confirmed,done" />
+
+						<!--button string="Confirm" type="workflow"
+			                 name="signal_confirm"
+                             groups="academic.group_manager"
+							 states="draft" />
+						<button string="Mark as Done" type="workflow"
+                			 name="signal_done"
+                             groups="academic.group_manager"
+                			 states="confirmed" />
+						<button string="Reset to draft" type="workflow"
+							 name="signal_draft"
+                             groups="academic.group_manager"
+							 states="confirmed,done" /-->
+
+						 <field name="state" widget="statusbar" />
+					</header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Session Name"/>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="course_id" />
+                                <field name="instructor_id"
+                                       domain="['|',('is_instructor','=',True),('category_id','=','Pelatih')]"/>
+                                <field name="start_date" />
+                                <field name="image_small" widget="image" class="oe_left oe_avatar" />
+                            </group>
+                            <group>
+                                <field name="duration" />
+                                <field name="seats" />
+                                <field name="active" />
+                                <field name="taken_seats" widget="progressbar"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Attendees">
+                                <field name="attendee_ids">
+                                    <tree string="Attendees">
+                                        <field name="name" />
+                                        <field name="partner_id" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- calendar -->
+		<record id="session_cal" model="ir.ui.view">
+			<field name="name">session_cal</field>
+			<field name="model">academic.session</field>
+			<field name="arch" type="xml">
+				<calendar string="Session" date_start="start_date" color="course_id">
+					<field name="name" />
+				</calendar>
+			</field>
+		</record>
+
+
+        <!-- search -->
+		<record id="session_search" model="ir.ui.view">
+
+			<field name="name">session_search</field>
+			<field name="model">academic.session</field>
+			<field name="arch" type="xml">
+				<search string="Search Session">
+
+					<filter string="Non Zero Duration"
+						name="non_zero"
+						domain="[('duration','>',0)]" />
+
+					<field name="name"/>
+					<field name="instructor_id"/>
+
+					<group string="Group By..">
+						<filter string="Course" domain="[]"
+							context="{'group_by':'course_id'}"/>
+
+						<filter string="Instructor" domain="[]"
+							context="{'group_by':'instructor_id'}"/>
+
+						<filter string="Date" domain="[]"
+							context="{'group_by':'start_date'}"/>
+					</group>
+
+				</search>
+			</field>
+		</record>
+
+        <!-- gantt -->
+        <record id="session_gantt" model="ir.ui.view">
+            <field name="name">session_gantt</field>
+            <field name="model">academic.session</field>
+            <field name="arch" type="xml">
+                <gantt date_delay="duration" string="Session"
+                	 date_start="start_date"
+                	 default_group_by="course_id">
+                </gantt>
+            </field>
+        </record>
+
+
+        <!-- graph -->
+        <record id="session_graph" model="ir.ui.view">
+            <field name="name">session_graph</field>
+            <field name="model">academic.session</field>
+            <field name="arch" type="xml">
+                <graph string="Session" type="bar">
+                    <field name="instructor_id"/>      <!-- x -->
+                    <field name="seats" operator="+"/> <!-- y -->
+                </graph>
+            </field>
+        </record>
+
+        <!-- kanban -->
+        <record id="session_kanban" model="ir.ui.view" >
+            <field name="name">session_kanban</field>
+            <field name="model">academic.session</field>
+            <field name="arch" type="xml">
+                <kanban version="7.0" default_group_by="course_id">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_vignette">
+                                <a type="open">
+                                	<img
+                                    t-att-src="kanban_image('academic.session',
+                                    'image_small', record.id.value)"
+                                    class="o_kanban_image"/>
+                                </a>
+
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <a type="open"><field name="name"/></a>
+                                    </h4>
+                                    <ul>
+                                        <li>
+                                        	Seats: <field name="seats"></field>
+                                        </li>
+                                        <li>
+                                        	Taken Seats: <field name="taken_seats"></field>
+                                    	</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+    </data>
+</openerp>
